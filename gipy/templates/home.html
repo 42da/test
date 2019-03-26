@@ -1,4 +1,4 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,15 +15,15 @@
   <title>GIPYEONG'S PAGE</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href='{% static "vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href='{% static "vendor/fontawesome-free/css/all.min.css" %}' rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
+  <link href='{% static "css/resume.min.css" %}' rel="stylesheet">
 
 </head>
 
@@ -33,7 +33,7 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none">GIPEYONG CHUNG</span>
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="passport.JPG" alt="">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='{% static "my_img/passport.JPG" %}' alt="">
       </span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,8 +107,8 @@
           <div class="resume-content">
             <h3 class="mb-0">Web Development</h3>
             <div class="subheading mb-3">LIKELION</div>
-            <img class="img-fluid img-profile mx-auto mb-2" src="likelion.JPEG" alt="" width="400px" height="400px">
-            <img class="img-fluid img-profile mx-auto mb-2" src="likelion2.JPG" alt="" width="400px" height="400px">
+            <img class="img-fluid img-profile mx-auto mb-2" src='{% static "my_img/likelion.JPEG" %}' alt="" width="400px" height="400px">
+            <img class="img-fluid img-profile mx-auto mb-2" src='{% static "my_img/likelion2.JPG" %}' alt="" width="400px" height="400px">
             <p>I'm in the club called 'Likelion' now. I hope to learn about web development and improve my skills so that I can take a step further in my future career.</p>
           </div>
           <div class="resume-date text-md-right">
@@ -120,7 +120,7 @@
           <div class="resume-content">
             <h3 class="mb-0">Assignment for AGV Using Deep Learning</h3>
             <div class="subheading mb-3">Industrial Intelligence Laboratory</div>
-            <video class="img-fluid img-profile mx-auto mb-2" src="agv.mp4" width="400px" height="400px" controls></video>
+            <video class="img-fluid img-profile mx-auto mb-2" src='{% static "my_img/agv.mp4" %}' width="400px" height="400px" controls></video>
             <p>Numerous agvs are moving in warehouses or semiconductor processes. The goal is to reduce waiting time of agvs by using deep learning.</p>
           </div>
           <div class="resume-date text-md-right">
@@ -132,8 +132,8 @@
           <div class="resume-content">
             <h3 class="mb-0">INU x-corps Big Idea Contest</h3>
             <div class="subheading mb-3">Industrial Intelligence Laboratory</div>
-            <img class="img-fluid img-profile mx-auto mb-2" src="big_idea2.JPG" alt="" width="400px" height="400px">
-            <img class="img-fluid img-profile mx-auto mb-2" src="big_idea.JPG" alt="" width="400px" height="400px">
+            <img class="img-fluid img-profile mx-auto mb-2" src='{% static "my_img/big_idea2.JPG" %}' alt="" width="400px" height="400px">
+            <img class="img-fluid img-profile mx-auto mb-2" src='{% static "my_img/big_idea.JPG" %}' alt="" width="400px" height="400px">
             <p>
                 According to KISA's Internet Usage Survey in 2017, 68.2% of Internet users ages 6 and over have become SNS users using SNS (Social Network Service) within the past one year.
                 However, since the current database model is not optimized for networking due to structural limitations, we propose a new database model to solve this problem.</p>
@@ -147,8 +147,8 @@
           <div class="resume-content">
             <h3 class="mb-0">Project Competition</h3>
             <div class="subheading mb-3">Innovative Production Laboratory</div>
-            <img class="img-fluid img-profile mx-auto mb-2" src="parking_simul_intro.JPG" alt="" width="400px" height="400px">
-            <img class="img-fluid img-profile mx-auto mb-2" src="parking_simul.JPG" alt="" width="400px" height="400px">
+            <img class="img-fluid img-profile mx-auto mb-2" src='{% static "my_img/parking_simul_intro.JPG" %}' alt="" width="400px" height="400px">
+            <img class="img-fluid img-profile mx-auto mb-2" src='{% static "my_img/parking_simul.JPG" %}' alt="" width="400px" height="400px">
             <p>
                 It is hard to find a parking spot because many people come to a large mart. Therefore, we introduce a partial reservation system to reduce the waiting time.</p>
           </div>
@@ -262,8 +262,14 @@
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
       <div class="w-100">
         <h2 class="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+        <img src='{% static "my_img/Service2.JPG" %}' width="200px" height="200px"><h1 style="display: inline-block;"> &nbsp; -> </h1>
+        <img src='{% static "my_img/cnn.JPG" %}' width="400px" height="400px"><h1 style="display: inline-block;"> &nbsp; -> </h1>
+        <img src='{% static "my_img/Service3.JPG" %}' width="200px" height="200px">
+        <p>Using CNN(Convolution Neural Network), learn the model that has a lot of low quality images converted from high quality images. 
+            Then the second network, the prior network, performs additional work.  It adds a new pixel with the features already known about the class to which the source image belongs.</p>
+        <!--
         <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+        -->
       </div>
     </section>
 <!--
@@ -306,14 +312,14 @@
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src='{% static "vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src='{% static "vendor/jquery-easing/jquery.easing.min.js" %}'></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
+  <script src='{% static "js/resume.min.js" %}'></script>
 
 </body>
 
